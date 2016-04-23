@@ -1,0 +1,14 @@
+body {
+    background-color: #A0A087;
+}
+
+.border {
+    border: 2px solid #A06D1C;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.navbar {
+    margin-bottom: 70px;
+}
+
