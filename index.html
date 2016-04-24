@@ -12,34 +12,30 @@
     <link rel="stylesheet" href="app/css/app.css">
     <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Issue Tracking System</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#/">Issue Tracking System</a>
-            </div>
+<body ng-controller="CommonCtrl">
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div ng-header></div>
 
-    <div ng-view></div>
+    <div class="container">
+        <div ng-view />
+    </div>
 
     <script src="app/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="app/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="app/bower_components/angular/angular.js"></script>
     <script src="app/bower_components/angular-route/angular-route.js"></script>
+    <script src="app/bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
+
     <script src="app/app.js"></script>
-    <script src="app/login-register/login-register-controller.js"></script>
+
+    <script src="app/home/home-controller.js"></script>
+    <script src="app/common/common-controller.js"></script>
+
+    <script src="app/common/services/authentication-service.js"></script>
+    <script src="app/common/services/notification-service.js"></script>
+    <script src="app/common/services/users-service.js"></script>
+    <script src="app/common/services/issues-service.js"></script>
+
+    <script src="app/common/directives/template.js"></script>
 </body>
 </html>

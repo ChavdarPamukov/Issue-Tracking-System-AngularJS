@@ -2,9 +2,21 @@
 
 angular.module('issueTrackingSystem', [
         'ngRoute',
-        'issueTrackingSystem.login-register'
+        'issueTrackingSystem.home',
+        'issueTrackingSystem.common',
+        'issueTrackingSystem.authentication',
+        'issueTrackingSystem.users',
+        'issueTrackingSystem.issues',
+        'issueTrackingSystem.notification',
+        'issueTrackingSystem.templates'
     ])
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/'});
-    }])
-    .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/');
+    .config([
+        '$routeProvider',
+        function($routeProvider) {
+            $routeProvider
+                .otherwise(
+                    {redirectTo: '/'}
+                );
+        }])
+    .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
+    .constant('PAGE_SIZE', 5);

@@ -1,0 +1,34 @@
+<div ng-if="isAuthenticated()">
+    <div class="col-md-4">
+        <h2>Dashboard</h2>
+        <div ng-if="isAdmin()">
+            <a href="#/projects/add"><button type="button" class="btn btn-primary">Add new project</button></a>
+            <a href="#/projects" class="btn btn-primary" ng-click="getAllProjects()">All projects</a>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div ng-if="userIssues.length !== 0">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Project</th>
+                    <th>Due Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="issue in userIssues">
+                    <td><a href="#issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                    <td>{{issue.Description}}</td>
+                    <td><a href="#/projects/{{issue.Project.Id}}">{{issue.Project.Name}}</a></td>
+                    <td>{{issue.DueDate}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="userIssues.length === 0">
+            <h3>You have no assigned issues.</h3>
+        </div>
+    </div>
+</div>
