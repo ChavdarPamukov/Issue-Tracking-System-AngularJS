@@ -6,6 +6,7 @@ angular.module('issueTrackingSystem', [
         'issueTrackingSystem.common',
         'issueTrackingSystem.authentication',
         'issueTrackingSystem.users',
+        'issueTrackingSystem.change-password',
         'issueTrackingSystem.issues',
         'issueTrackingSystem.notification',
         'issueTrackingSystem.templates'
