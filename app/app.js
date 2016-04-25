@@ -2,6 +2,7 @@
 
 angular.module('issueTrackingSystem', [
         'ngRoute',
+        'ui.bootstrap.pagination',
         'issueTrackingSystem.home',
         'issueTrackingSystem.common',
         'issueTrackingSystem.authentication',

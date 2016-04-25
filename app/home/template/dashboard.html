@@ -26,6 +26,10 @@
                 </tr>
                 </tbody>
             </table>
+            <pagination total-items="userIssuesCount" ng-model="issuesParams.pageNumber"
+                        items-per-page="issuesParams.pageSize" ng-change="getUserIssues()"
+                        max-size="9" boundary-links="true" class="paging">
+            </pagination>
         </div>
         <div ng-if="userIssues.length === 0">
             <h3>You have no assigned issues.</h3>
