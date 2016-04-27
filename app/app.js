@@ -10,7 +10,10 @@ angular.module('issueTrackingSystem', [
         'issueTrackingSystem.change-password',
         'issueTrackingSystem.issues',
         'issueTrackingSystem.notification',
-        'issueTrackingSystem.templates'
+        'issueTrackingSystem.templates',
+        'issueTrackingSystem.projects',
+        'issueTrackingSystem.all-projects',
+        'issueTrackingSystem.add-project'
     ])
     .config([
         '$routeProvider',
