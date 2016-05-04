@@ -42,4 +42,23 @@ angular.module('issueTrackingSystem.view-project-page', [])
                     notificationService.showError('Unable to get project', err);
                 });
 
+            projects.getIssues($routeParams.id)
+                .then(function success(issuesData) {
+                    $scope.currentProjectIssues = issuesData;
+                    $scope.currentProjectIssuesAssignees = [];
+                    $scope.currentProjectIssuesPriorities = [];
+
+                    issuesData.forEach(function(issue) {
+
+                        if($scope.currentProjectIssuesAssignees.indexOf(issue.Assignee.Username) === -1) {
+                            $scope.currentProjectIssuesAssignees.push(issue.Assignee.Username);
+                        }
+
+                        if($scope.currentProjectIssuesPriorities.indexOf(issue.Priority.Name) === -1) {
+                            $scope.currentProjectIssuesPriorities.push(issue.Priority.Name);
+                        }
+                    });
+                }, function error(err) {
+                    notificationService.showError('Unable to get issues', err);
+                });
         }]);
