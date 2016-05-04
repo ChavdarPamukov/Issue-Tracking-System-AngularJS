@@ -24,6 +24,14 @@
                 <th>Assignee</th>
             </tr>
             </thead>
+            <tbody>
+            <tr ng-repeat="issue in currentProjectIssues">
+                <td><a href="#issues/{{issue.Id}}">{{issue.Title}}</a></td>
+                <td>{{issue.Description}}</td>
+                <td>{{issue.DueDate}}</td>
+                <td>{{issue.Assignee.Username}}</td>
+            </tr>
+            </tbody>
         </table>
     </div>
 </div>
