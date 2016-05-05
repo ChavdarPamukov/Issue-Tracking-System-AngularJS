@@ -14,6 +14,7 @@ angular.module('issueTrackingSystem', [
         'issueTrackingSystem.projects',
         'issueTrackingSystem.all-projects',
         'issueTrackingSystem.add-project',
+        'issueTrackingSystem.my-project',
         'issueTrackingSystem.view-project-page',
         'issueTrackingSystem.edit-project'
     ])
