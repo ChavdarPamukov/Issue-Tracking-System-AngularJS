@@ -34,4 +34,10 @@ angular.module('issueTrackingSystem.templates', [])
             restrict: 'A',
             templateUrl: 'app/issues/issue-comments/issue-comments.html'
         }
+    }])
+    .directive('ngIssueFilter', [function () {
+        return {
+            restrict: 'A',
+            templateUrl: 'app/issues/issue-filter/issue-filter.html'
+        }
     }]);

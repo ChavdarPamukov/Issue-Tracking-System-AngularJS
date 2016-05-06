@@ -13,6 +13,7 @@
         <p><strong>Description:</strong> {{currentProject.Description}}</p>
         <p>Labels: {{currentProjectLabels.join(', ')}}</p>
         <p>Priorities: {{currentProjectPriorities.join(', ')}}</p>
+        <div ng-issue-filter></div>
     </div>
     <div class="col-md-8">
         <table class="table">
@@ -25,7 +26,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="issue in currentProjectIssues">
+            <tr ng-repeat="issue in currentProjectIssues |
+                    filter: {Priority: {Name: issuePriorityFilter || '!!'}} |
+                    filter: {Assignee: {Username: issueAssigneeFilter || '!!'}} |
+                    filter: {Status: {Id: issueStatusFilter || '!!'}}">
                 <td><a href="#issues/{{issue.Id}}">{{issue.Title}}</a></td>
                 <td>{{issue.Description}}</td>
                 <td>{{issue.DueDate}}</td>
