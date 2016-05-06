@@ -7,7 +7,7 @@ angular.module('issueTrackingSystem.edit-project', [])
                 templateUrl: 'app/projects/edit-project/edit-project.html',
                 controller: 'EditProjectsCtrl',
                 access: {
-                    requiresAdmin: true
+                    requiresLogin: true
                 }
             })
     }])

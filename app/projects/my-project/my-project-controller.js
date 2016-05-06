@@ -7,7 +7,7 @@ angular.module('issueTrackingSystem.my-project', [])
                 templateUrl: 'app/projects/my-project/my-project.html',
                 controller: 'MyProjectsCtrl',
                 access: {
-                    requiresAdmin: true
+                    requiresLogin: true
                 }
             })
     }])
