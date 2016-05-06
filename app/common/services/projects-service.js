@@ -156,7 +156,7 @@ angular.module('issueTrackingSystem.projects', [])
 
                 var data = 'Title=' + issue.Title +
                     '&Description=' + issue.Description +
-                    '&DueDate=' + issue.DueDate.toLocaleString() +
+                    '&DueDate=' + issue.DueDate.toISOString() +
                     '&ProjectId=' + issue.ProjectId +
                     '&AssigneeId=' + issue.AssigneeId +
                     '&PriorityId=' + issue.PriorityId +
