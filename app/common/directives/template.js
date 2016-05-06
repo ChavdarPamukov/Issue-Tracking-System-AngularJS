@@ -22,4 +22,16 @@ angular.module('issueTrackingSystem.templates', [])
             restrict: 'A',
             templateUrl: 'app/home/template/dashboard.html'
         }
+    }])
+    .directive('ngIssueCommentForm', [function() {
+        return {
+            restrict: 'A',
+            templateUrl: 'app/issues/issue-comments/add-issue-comment.html'
+        }
+    }])
+    .directive('ngIssueComments', [function() {
+        return {
+            restrict: 'A',
+            templateUrl: 'app/issues/issue-comments/issue-comments.html'
+        }
     }]);

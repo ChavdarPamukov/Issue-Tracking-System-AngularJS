@@ -28,7 +28,7 @@ angular.module('issueTrackingSystem.issues', [])
 
             var req = {
                 method: 'GET',
-                url: baseUrl + 'issues/' + id,
+                url: BASE_URL + 'issues/' + id,
                 headers: {
                     'Authorization': 'Bearer ' + JSON.parse(sessionStorage['currentUser']).access_token
                 }
@@ -61,7 +61,7 @@ angular.module('issueTrackingSystem.issues', [])
 
             var req = {
                 method: 'PUT',
-                url: baseUrl + 'issues/' + id,
+                url: BASE_URL + 'issues/' + id,
                 headers: {
                     'Authorization': 'Bearer ' + JSON.parse(sessionStorage['currentUser']).access_token,
                     'Content-Type': 'application/x-www-form-urlencoded'
@@ -85,7 +85,7 @@ angular.module('issueTrackingSystem.issues', [])
 
             var req = {
                 method: 'PUT',
-                url: baseUrl + 'issues/' + issueId + '/changestatus?statusid=' + statusId,
+                url: BASE_URL + 'issues/' + issueId + '/changestatus?statusid=' + statusId,
                 headers: {
                     'Authorization': 'Bearer ' + JSON.parse(sessionStorage['currentUser']).access_token
                 }
