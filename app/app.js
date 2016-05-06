@@ -18,7 +18,8 @@ angular.module('issueTrackingSystem', [
         'issueTrackingSystem.view-project-page',
         'issueTrackingSystem.edit-project',
         'issueTrackingSystem.services.comments',
-        'issueTrackingSystem.issue-view-page'
+        'issueTrackingSystem.issue-view-page',
+        'issueTrackingSystem.add-issue'
     ])
     .config([
         '$routeProvider',
