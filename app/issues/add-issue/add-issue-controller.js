@@ -16,8 +16,9 @@ angular.module('issueTrackingSystem.add-issue', [])
         '$routeParams',
         '$location',
         'projects',
+        'issues',
         'notificationService',
-        function ($scope, $routeParams, $location, projects, notificationService) {
+        function ($scope, $routeParams, $location, projects, issues, notificationService) {
             $scope.allUsers();
 
             projects.getProjectById($routeParams.id)
@@ -37,7 +38,7 @@ angular.module('issueTrackingSystem.add-issue', [])
                     Labels: issueToAdd.Labels.split(',')
                 };
 
-                projects.addIssueToProject(issueToSend)
+                issues.addIssueToProject(issueToSend)
                     .then(function success(data) {
                         $location.path('projects/' + data.Project.Id)
                     }, function error(err) {

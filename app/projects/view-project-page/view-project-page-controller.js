@@ -15,8 +15,9 @@ angular.module('issueTrackingSystem.view-project-page', [])
         '$scope',
         '$routeParams',
         'projects',
+        'issues',
         'notificationService',
-        function ($scope, $routeParams, projects, notificationService) {
+        function ($scope, $routeParams, projects, issues, notificationService) {
 
             projects.getProjectById($routeParams.id)
                 .then(function success(data) {
@@ -42,19 +43,19 @@ angular.module('issueTrackingSystem.view-project-page', [])
                     notificationService.showError('Unable to get project', err);
                 });
 
-            projects.getIssues($routeParams.id)
+            issues.getIssues($routeParams.id)
                 .then(function success(issuesData) {
                     $scope.currentProjectIssues = issuesData;
                     $scope.currentProjectIssuesAssignees = [];
                     $scope.currentProjectIssuesPriorities = [];
 
-                    issuesData.forEach(function(issue) {
+                    issuesData.forEach(function (issue) {
 
-                        if($scope.currentProjectIssuesAssignees.indexOf(issue.Assignee.Username) === -1) {
+                        if ($scope.currentProjectIssuesAssignees.indexOf(issue.Assignee.Username) === -1) {
                             $scope.currentProjectIssuesAssignees.push(issue.Assignee.Username);
                         }
 
-                        if($scope.currentProjectIssuesPriorities.indexOf(issue.Priority.Name) === -1) {
+                        if ($scope.currentProjectIssuesPriorities.indexOf(issue.Priority.Name) === -1) {
                             $scope.currentProjectIssuesPriorities.push(issue.Priority.Name);
                         }
                     });

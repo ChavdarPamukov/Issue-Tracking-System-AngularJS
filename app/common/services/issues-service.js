@@ -101,10 +101,68 @@ angular.module('issueTrackingSystem.service.issues', [])
             return deferred.promise;
         }
 
+        function getIssuesByProjectId(projectId) {
+            var deferred = $q.defer(),
+                issuesReq = {
+                    method: 'GET',
+                    url: BASE_URL + 'projects/' + projectId + '/issues',
+                    headers: {
+                        'Authorization': 'Bearer ' + JSON.parse(sessionStorage['currentUser']).access_token
+                    }
+                };
+
+            $http(issuesReq)
+                .then(function success(response) {
+                    deferred.resolve(response.data);
+                }, function error(err) {
+                    deferred.reject(err);
+                });
+
+            return deferred.promise;
+        }
+
+        function addIssueToProject(issue) {
+            var deferred = $q.defer();
+
+            var dataLabels = '';
+            issue.Labels.forEach(function (l, index) {
+                dataLabels += '&labels[' + index + '].Name=' + l.trim();
+            });
+
+            var data = 'Title=' + issue.Title +
+                '&Description=' + issue.Description +
+                '&DueDate=' + issue.DueDate.toISOString() +
+                '&ProjectId=' + issue.ProjectId +
+                '&AssigneeId=' + issue.AssigneeId +
+                '&PriorityId=' + issue.PriorityId +
+                dataLabels;
+
+            var req = {
+                method: 'POST',
+                url: BASE_URL + 'issues/',
+                headers: {
+                    'Authorization': 'Bearer ' + JSON.parse(sessionStorage['currentUser']).access_token,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: data
+            };
+
+            $http(req)
+                .then(function success(response) {
+                    deferred.resolve(response.data);
+                }, function error(err) {
+                    deferred.reject(err);
+                });
+
+            return deferred.promise;
+        }
+
         return {
             getUserIssues: getMyIssues,
             getIssueById: getIssueById,
             editIssue: editIssue,
-            changeStatus: changeStatus
+            changeStatus: changeStatus,
+            getIssues: getIssuesByProjectId,
+            addIssueToProject: addIssueToProject
         }
     }]);
