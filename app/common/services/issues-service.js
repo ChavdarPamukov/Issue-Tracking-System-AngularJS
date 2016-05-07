@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.issues', [])
+angular.module('issueTrackingSystem.service.issues', [])
     .factory('issues', ['$http', '$q', 'BASE_URL', function ($http, $q, BASE_URL) {
         function getMyIssues(criteria, params) {
             var deferred = $q.defer();

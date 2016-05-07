@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.notification', [])
+angular.module('issueTrackingSystem.service.notification', [])
     .factory('notificationService', [
         function () {
             return {

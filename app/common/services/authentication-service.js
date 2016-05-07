@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.authentication', [])
+angular.module('issueTrackingSystem.service.authentication', [])
     .factory('authentication', [
         '$http',
         '$q',

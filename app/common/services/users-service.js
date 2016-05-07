@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.users', [])
+angular.module('issueTrackingSystem.service.users', [])
     .factory('users', ['$http', '$q', 'BASE_URL', function($http, $q, baseUrl) {
         function getAllUsers() {
             var deferred = $q.defer(),
