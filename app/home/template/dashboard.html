@@ -1,14 +1,14 @@
 <div ng-if="isAuthenticated()">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h2>Dashboard</h2>
         <div ng-if="isAdmin()">
             <a href="#/projects/add"><button type="button" class="btn btn-primary">Add new project</button></a>
             <a href="#/projects" class="btn btn-primary" ng-click="getAllProjects()">All projects</a>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-9">
         <div ng-if="userIssues.length !== 0">
-            <table class="table">
+            <table class="table radius">
                 <thead>
                 <tr>
                     <th>Title</th>

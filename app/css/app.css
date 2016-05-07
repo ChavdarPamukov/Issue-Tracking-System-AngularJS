@@ -9,6 +9,21 @@ body {
 }
 
 .navbar {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
+table {
+    background-color: #ebebeb;
+}
+
+.radius {
+    border-radius: 10px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+p {
+    font-size: 18px;
+}

@@ -4,18 +4,18 @@
 <div>
     <div id="issue-info">
         <div class="col-md-6">
-            <span class="key"><strong>{{currentIssue.IssueKey}}</strong></span>
             <a href="#issues/edit/{{currentIssue.Id}}" class="btn btn-success" ng-if="isAdmin() || isLeadOfProject" role="button">Edit</a>
             <a href="#projects/{{currentIssue.Project.Id}}" class="btn btn-success" role="button">Back to project</a>
+            <p><strong>IssueKey: </strong>{{currentIssue.IssueKey}}</p>
             <p><strong>Title: </strong>{{currentIssue.Title}}</p>
             <p><strong>Description: </strong>{{currentIssue.Description}}</p>
             <p><strong>AssigneeId </strong>(current Id {{currentIssue.Assignee.Id}}) {{currentIssue.Assignee.Username}}</p>
             <p><strong>PriorityId </strong>(current Id {{currentIssue.Priority.Id}}) {{currentIssue.Priority.Name}}</p>
             <p><strong>DueDate: </strong>{{currentIssue.DueDate | date}}</p>
-            <p>Author: {{currentIssue.Author.Username}}</p>
-            <p>Project: {{currentIssue.Project.Name}}</p>
-            <p>Status: {{currentIssue.Status.Name}}</p>
-            <p>Labels: {{currentIssueLabels.join(', ')}}</p>
+            <p><strong>Author: </strong>{{currentIssue.Author.Username}}</p>
+            <p><strong>Project: </strong>{{currentIssue.Project.Name}}</p>
+            <p><strong>Status: </strong>{{currentIssue.Status.Name}}</p>
+            <p><strong>Labels: </strong>{{currentIssueLabels.join(', ')}}</p>
         </div>
         <div class="col-md-6">
             <ul class="status"  ng-if="currentIssue.AvailableStatuses.length !== 0">

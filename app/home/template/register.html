@@ -1,7 +1,8 @@
 <form name="registerUserForm">
     <label for="reg-username">Username</label>
-    <input type="text"  required="required" ng-model="registerUser.username" id="reg-username" class="form-control" />
-    <br />
+    <input type="text" required="required" ng-model="registerUser.username" id="reg-username" class="form-control"
+           placeholder="Email"/>
+    <br/>
     <label for="reg-password">Password</label>
     <input type="password"
            required="required"
@@ -9,8 +10,9 @@
            max-length="100"
            ng-model="registerUser.password"
            id="reg-password"
-           class="form-control" />
-    <br />
+           class="form-control"
+           placeholder="Password"/>
+    <br/>
     <label for="reg-confirm-password">Confirm Password</label>
     <input type="password"
            required="required"
@@ -18,9 +20,11 @@
            max-length="100"
            ng-model="registerUser.confirmPassword"
            id="reg-confirm-password"
-           class="form-control" />
-    <br />
+           class="form-control"
+           placeholder="Confirm Password"/>
+    <br/>
     <button class="btn btn-primary"
             ng-disabled="registerUserForm.$invalid || registerUser.password != registerUser.confirmPassword"
-            ng-click="register(registerUser)">Register</button>
+            ng-click="register(registerUser)">Register
+    </button>
 </form>
