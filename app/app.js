@@ -10,17 +10,17 @@ angular.module('issueTrackingSystem', [
         'issueTrackingSystem.service.issues',
         'issueTrackingSystem.services.comments',
         'issueTrackingSystem.directive.templates',
-        'issueTrackingSystem.home',
-        'issueTrackingSystem.common',
-        'issueTrackingSystem.change-password',
-        'issueTrackingSystem.all-projects',
-        'issueTrackingSystem.add-project',
-        'issueTrackingSystem.my-project',
-        'issueTrackingSystem.view-project-page',
-        'issueTrackingSystem.edit-project',
-        'issueTrackingSystem.issue-view-page',
-        'issueTrackingSystem.edit-issue',
-        'issueTrackingSystem.add-issue'
+        'issueTrackingSystem.home.controller',
+        'issueTrackingSystem.common.controller',
+        'issueTrackingSystem.change-password.controller',
+        'issueTrackingSystem.all-projects.controller',
+        'issueTrackingSystem.add-project.controller',
+        'issueTrackingSystem.my-project.controller',
+        'issueTrackingSystem.view-project-page.controller',
+        'issueTrackingSystem.edit-project.controller',
+        'issueTrackingSystem.issue-view-page.controller',
+        'issueTrackingSystem.edit-issue.controller',
+        'issueTrackingSystem.add-issue.controller'
     ])
     .config([
         '$routeProvider',
@@ -31,23 +31,4 @@ angular.module('issueTrackingSystem', [
                 );
         }])
     .constant('BASE_URL', 'http://softuni-issue-tracker.azurewebsites.net/')
-    .constant('PAGE_SIZE', 5)
-    .run([
-        '$rootScope',
-        '$location',
-        'authentication',
-        function ($rootScope, $location, authentication) {
-            $rootScope.$on('$routeChangeStart', function (event, nextRoute) {
-                if (nextRoute.access) {
-                    if (nextRoute.access.requiresLogin && !authentication.isAuthenticated()) {
-                        $location.path('/');
-                    }
-
-                    if (nextRoute.access.requiresAdmin && !authentication.isAdmin()) {
-                        $location.path('/');
-                    }
-                } else {
-                    $location.path('/');
-                }
-            });
-        }]);
+    .constant('PAGE_SIZE', 5);

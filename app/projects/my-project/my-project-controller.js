@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.my-project', [])
+angular.module('issueTrackingSystem.my-project.controller', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/projects/my', {

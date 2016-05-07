@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.add-issue', [])
+angular.module('issueTrackingSystem.add-issue.controller', [])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/projects/add-issue/:id', {

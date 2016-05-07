@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.common', [])
+angular.module('issueTrackingSystem.common.controller', [])
 
     .controller('CommonCtrl', [
         '$scope',

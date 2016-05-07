@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('issueTrackingSystem.change-password', [])
+angular.module('issueTrackingSystem.change-password.controller', [])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/profile/password', {
